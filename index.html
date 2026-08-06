@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#2563eb">
+<meta name="apple-mobile-web-app-title" content="健身教练简历">
+<title>健身教练 · 个人介绍</title>
+
+<!-- ============================================================
+ * 📸 照片替换指南（老大看这里）
+ * 所有照片放在同目录的 images/ 文件夹里，命名规则如下：
+ *   关于我：  images/about-1.jpg ~ about-6.jpg
+ *   对比照：  images/before-after-1.jpg ~ before-after-6.jpg
+ *   私教：    images/pt-1.jpg ~ pt-6.jpg
+ *   团课：    images/group-1.jpg ~ group-6.jpg
+ *   证书：    images/cert-1.jpg ~ cert-6.jpg
+ *   健身指导：images/online-1.jpg ~ online-6.jpg
+ *   急救培训：images/firstaid-1.jpg ~ firstaid-6.jpg
+ *   联系我：  images/qrcode.jpg（微信二维码）
+ * 找到下方对应位置，把 src="..." 改成你的图片路径即可。
+ *============================================================ -->
+
+<!-- favicon：蓝色渐变 + 哑铃图标 -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%%22%20y1%3D%220%%22%20x2%3D%22100%%22%20y2%3D%22100%%22%3E%3Cstop%20offset%3D%220%%22%20stop-color%3D%22%232563eb%22/%3E%3Cstop%20offset%3D%22100%%22%20stop-color%3D%221e40af%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%22512%22%20height%3D%22512%22%20rx%3D%22110%22%20fill%3D%22url(%23g)%22/%3E%3Crect%20x%3D%22116%22%20y%3D%22226%22%20width%3D%22280%22%20height%3D%2260%22%20rx%3D%2212%22%20fill%3D%22%23fff%22/%3E%3Crect%20x%3D%2286%22%20y%3D%22206%22%20width%3D%2240%22%20height%3D%22100%22%20rx%3D%2210%22%20fill%3D%22%23fff%22/%3E%3Crect%20x%3D%22386%22%20y%3D%22206%22%20width%3D%2240%22%20height%3D%22100%22%20rx%3D%2210%22%20fill%3D%22%23fff%22/%3E%3Crect%20x%3D%22156%22%20y%3D%22206%22%20width%3D%2216%22%20height%3D%22100%22%20rx%3D%224%22%20fill%3D%22%23fff%22%20opacity%3D%220.7%22/%3E%3Crect%20x%3D%22340%22%20y%3D%22206%22%20width%3D%2216%22%20height%3D%22100%22%20rx%3D%224%22%20fill%3D%22%23fff%22%20opacity%3D%220.7%22/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%%22%20y1%3D%220%%22%20x2%3D%22100%%22%20y2%3D%22100%%22%3E%3Cstop%20offset%3D%220%%22%20stop-color%3D%222563eb%22/%3E%3Cstop%20offset%3D%22100%%22%20stop-color%3D%221e40af%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%22512%22%20height%3D%22512%22%20rx%3D%22110%22%20fill%3D%22url(%23g)%22/%3E%3Crect%20x%3D%22116%22%20y%3D%22226%22%20width%3D%22280%22%20height%3D%2260%22%20rx%3D%2212%22%20fill%3D%22%23fff%22/%3E%3Crect%20x%3D%2286%22%20y%3D%22206%22%20width%3D%2240%22%20height%3D%22100%22%20rx%3D%2210%22%20fill%3D%22%23fff%22/%3E%3Crect%20x%3D%22386%22%20y%3D%22206%22%20width%3D%2240%22%20height%3D%22100%22%20rx%3D%2210%22%20fill%3D%22%23fff%22/%3E%3Crect%20x%3D%22156%22%20y%3D%22206%22%20width%3D%2216%22%20height%3D%22100%22%20rx%3D%224%22%20fill%3D%22%23fff%22%20opacity%3D%220.7%22/%3E%3Crect%20x%3D%22340%22%20y%3D%22206%22%20width%3D%2216%22%20height%3D%22100%22%20rx%3D%224%22%20fill%3D%22%23fff%22%20opacity%3D%220.7%22/%3E%3C/svg%3E">
+
+<!-- PWA manifest -->
+<link rel="manifest" href="data:application/manifest+json,%7B%22name%22%3A%22%E5%81%A5%E8%BA%AB%E6%95%99%E7%BB%83%E7%AE%80%E4%BB%8B%22%2C%22short_name%22%3A%22%E6%95%99%E7%BB%83%E7%AE%80%E4%BB%8B%22%2C%22start_url%22%3A%22.%22%2C%22display%22%3A%22standalone%22%2C%22background_color%22%3A%22%23eef2f7%22%2C%22theme_color%22%3A%22%232563eb%22%2C%22orientation%22%3A%22portrait%22%7D">
+
+<style>
+/* ==================== 全局变量（复用力诚模板） ==================== */
+:root {
+    --ios-blue: #007AFF;
+    --ios-green: #34C759;
+    --ios-red: #FF3B30;
+    --c-about:   #2563eb;  /* 关于我 - 蓝 */
+    --c-compare: #ec4899;  /* 对比照 - 粉 */
+    --c-pt:      #16a34a;  /* 私教 - 绿 */
+    --c-group:   #ea580c;  /* 团课 - 橙 */
+    --c-cert:    #7c3aed;  /* 证书 - 紫 */
+    --c-online:  #0891b2;  /* 健身指导 - 青 */
+    --c-firstaid:#dc2626;  /* 急救 - 红 */
+    --c-contact: #1e40af;  /* 联系我 - 深蓝 */
+    --gray-50: #F9FAFB;
+    --gray-100: #F3F4F6;
+    --gray-200: #E5E7EB;
+    --gray-300: #D1D5DB;
+    --gray-400: #9CA3AF;
+    --gray-500: #6B7280;
+    --gray-600: #4B5563;
+    --gray-700: #374151;
+    --gray-800: #1F2937;
+    --gray-900: #111827;
+    --shadow-sm: 0 1px 2px rgba(0,0,0,.05);
+    --shadow-md: 0 4px 6px rgba(0,0,0,.1);
+    --shadow-lg: 0 10px 15px rgba(0,0,0,.1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    background: #eef2f7;
+    color: #1e293b;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* ==================== 顶部 Hero（头像+姓名） ==================== */
+.hero {
+    background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+    color: #fff;
+    padding: 28px 16px 24px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 30%, rgba(255,255,255,.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(255,255,255,.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+.hero-avatar {
+    width: 92px; height: 92px;
+    border-radius: 50%;
+    border: 4px solid rgba(255,255,255,.9);
+    background: rgba(255,255,255,.2);
+    margin: 0 auto 12px;
+    display: block;
+    object-fit: cover;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 6px 20px rgba(0,0,0,.2);
+}
+.hero-avatar-ph {
+    width: 92px; height: 92px;
+    border-radius: 50%;
+    border: 4px solid rgba(255,255,255,.9);
+    background: rgba(255,255,255,.2);
+    margin: 0 auto 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 6px 20px rgba(0,0,0,.2);
+}
+.hero-name {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    position: relative;
+    z-index: 1;
+}
+.hero-title {
+    font-size: 13px;
+    opacity: .92;
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* ==================== 顶部导航条（横向滚动分段按钮） ==================== */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    background: #fff;
+    box-shadow: 0 2px 12px rgba(0,0,0,.08);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+.navbar::-webkit-scrollbar { display: none; }
+.navbar-inner {
+    display: flex;
+    gap: 8px;
+    padding: 10px 12px;
+    min-width: max-content;
+}
+.nav-btn {
+    flex: none;
+    padding: 10px 14px;
+    border: none;
+    background: #f1f5f9;
+    border-radius: 9px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #64748b;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all .2s;
+}
+.nav-btn.active {
+    color: #fff;
+    box-shadow: 0 3px 10px rgba(0,0,0,.18);
+}
+.nav-btn[data-tab="about"].active    { background: var(--c-about);    box-shadow: 0 3px 10px rgba(37,99,235,.25); }
+.nav-btn[data-tab="compare"].active  { background: var(--c-compare);  box-shadow: 0 3px 10px rgba(236,72,153,.25); }
+.nav-btn[data-tab="pt"].active       { background: var(--c-pt);       box-shadow: 0 3px 10px rgba(22,163,74,.25); }
+.nav-btn[data-tab="group"].active    { background: var(--c-group);    box-shadow: 0 3px 10px rgba(234,88,12,.25); }
+.nav-btn[data-tab="cert"].active     { background: var(--c-cert);     box-shadow: 0 3px 10px rgba(124,58,237,.25); }
+.nav-btn[data-tab="online"].active   { background: var(--c-online);   box-shadow: 0 3px 10px rgba(8,145,178,.25); }
+.nav-btn[data-tab="firstaid"].active { background: var(--c-firstaid); box-shadow: 0 3px 10px rgba(220,38,38,.25); }
+.nav-btn[data-tab="contact"].active  { background: var(--c-contact);  box-shadow: 0 3px 10px rgba(30,64,175,.25); }
+
+/* ==================== 面板容器 ==================== */
+.panels {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 14px 12px 40px;
+}
+.panel { display: none; animation: fade .25s; }
+.panel.active { display: block; }
+@keyframes fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+/* 模块标题 */
+.section-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.section-title .bar {
+    width: 4px;
+    height: 18px;
+    border-radius: 2px;
+    background: var(--c-about);
+}
+.panel[data-color="compare"]  .section-title .bar { background: var(--c-compare); }
+.panel[data-color="pt"]       .section-title .bar { background: var(--c-pt); }
+.panel[data-color="group"]    .section-title .bar { background: var(--c-group); }
+.panel[data-color="cert"]     .section-title .bar { background: var(--c-cert); }
+.panel[data-color="online"]   .section-title .bar { background: var(--c-online); }
+.panel[data-color="firstaid"] .section-title .bar { background: var(--c-firstaid); }
+.panel[data-color="contact"]  .section-title .bar { background: var(--c-contact); }
+
+/* 文案区（留位） */
+.section-desc {
+    font-size: 14px;
+    color: #64748b;
+    line-height: 1.7;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 11px;
+    padding: 14px;
+    margin-bottom: 14px;
+    box-shadow: 0 1px 4px rgba(0,0,0,.04);
+}
+.section-desc p + p { margin-top: 8px; }
+.section-desc .ph-text {
+    color: #94a3b8;
+    font-style: italic;
+    font-size: 13px;
+}
+
+/* ==================== 6格图片网格 ==================== */
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-bottom: 18px;
+}
+.photo-cell {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #f8fafc;
+    border: 2px dashed #cbd5e1;
+    cursor: pointer;
+    transition: transform .15s, border-color .15s;
+}
+.photo-cell:active { transform: scale(.96); }
+.photo-cell.has-img {
+    border-style: solid;
+    border-color: transparent;
+    box-shadow: 0 2px 8px rgba(0,0,0,.08);
+}
+.photo-cell img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.photo-cell .cell-ph {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #94a3b8;
+    font-size: 11px;
+    font-weight: 600;
+    gap: 4px;
+}
+.photo-cell .cell-ph .emoji { font-size: 22px; }
+
+/* ==================== CTA 按钮 ==================== */
+.cta-wrap { margin: 18px 0 6px; }
+.cta-btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(0,0,0,.18);
+    transition: transform .15s;
+}
+.cta-btn:active { transform: scale(.98); }
+.cta-btn small { display: block; font-size: 12px; font-weight: 500; opacity: .9; margin-top: 2px; }
+.cta-pt       { background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); }
+.cta-group    { background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%); }
+.cta-online   { background: linear-gradient(135deg, #0891b2 0%, #0e7490 100%); }
+.cta-firstaid { background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%); }
+
+/* ==================== 联系我页面专属 ==================== */
+.contact-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 1px 4px rgba(0,0,0,.04);
+    margin-bottom: 14px;
+}
+.qrcode-box {
+    width: 200px; height: 200px;
+    margin: 0 auto 14px;
+    border-radius: 12px;
+    background: #f8fafc;
+    border: 2px dashed #cbd5e1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.qrcode-box img { width: 100%; height: 100%; object-fit: cover; }
+.qrcode-box .qr-ph { color: #94a3b8; font-size: 13px; text-align: center; line-height: 1.6; }
+.contact-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 11px;
+    padding: 14px;
+    margin-bottom: 10px;
+    box-shadow: 0 1px 4px rgba(0,0,0,.04);
+}
+.contact-row .lab { font-size: 13px; color: #64748b; }
+.contact-row .val { font-size: 15px; font-weight: 600; color: #1e293b; flex: 1; text-align: right; word-break: break-all; }
+.contact-row .copy-btn {
+    padding: 6px 12px;
+    background: #eff6ff;
+    color: #2563eb;
+    border: none;
+    border-radius: 7px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    flex: none;
+}
+.contact-row .copy-btn:active { background: #dbeafe; }
+
+/* ==================== toast ==================== */
+.toast {
+    position: fixed;
+    left: 50%;
+    top: 60px;
+    transform: translateX(-50%);
+    background: rgba(15,23,42,.92);
+    color: #fff;
+    padding: 11px 18px;
+    border-radius: 9px;
+    opacity: 0;
+    pointer-events: none;
+    transition: .25s;
+    z-index: 100000;
+    max-width: 88vw;
+    font-size: 13px;
+    text-align: center;
+}
+.toast.show { opacity: 1; }
+.toast.ok { background: rgba(22,163,74,.95); }
+
+/* ==================== 大图轮播弹层 ==================== */
+.viewer {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.92);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 10001;
+    flex-direction: column;
+}
+.viewer.open { display: flex; }
+.viewer-img {
+    max-width: 92vw;
+    max-height: 78vh;
+    object-fit: contain;
+    border-radius: 6px;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+.viewer-bar {
+    color: #fff;
+    font-size: 14px;
+    margin-top: 16px;
+    text-align: center;
+    letter-spacing: 1px;
+}
+.viewer-close {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.15);
+    color: #fff;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+.viewer-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.15);
+    color: #fff;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+.viewer-nav.prev { left: 12px; }
+.viewer-nav.next { right: 12px; }
+.viewer-nav:active { background: rgba(255,255,255,.3); }
+
+/* ==================== 二维码弹层（预约体验课） ==================== */
+.qr-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.5);
+    backdrop-filter: blur(4px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 10001;
+    padding: 24px;
+}
+.qr-overlay.open { display: flex; }
+.qr-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 24px 20px 20px;
+    max-width: 320px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0,0,0,.3);
+}
+.qr-card .qr-title { font-size: 18px; font-weight: 700; margin-bottom: 6px; }
+.qr-card .qr-sub { font-size: 13px; color: #64748b; margin-bottom: 16px; line-height: 1.6; }
+.qr-card .qr-img-box {
+    width: 220px; height: 220px;
+    margin: 0 auto 16px;
+    border-radius: 12px;
+    background: #f8fafc;
+    border: 2px dashed #cbd5e1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.qr-card .qr-img-box img { width: 100%; height: 100%; object-fit: cover; }
+.qr-card .qr-img-box .qr-ph { color: #94a3b8; font-size: 13px; padding: 20px; line-height: 1.6; }
+.qr-card .qr-tip {
+    font-size: 12px;
+    color: #94a3b8;
+    background: #f8fafc;
+    border-radius: 8px;
+    padding: 8px;
+    margin-bottom: 14px;
+    line-height: 1.6;
+}
+.qr-card .qr-close {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: #f1f5f9;
+    color: #475569;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* ==================== 桌面端适配 ==================== */
+@media (min-width: 768px) {
+    .hero { padding-top: 40px; padding-bottom: 32px; }
+    .hero-avatar, .hero-avatar-ph { width: 110px; height: 110px; }
+    .hero-name { font-size: 26px; }
+    .hero-title { font-size: 15px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ==================== Hero 头部 ==================== -->
+<header class="hero">
+    <img class="hero-avatar" src="images/avatar.jpg" alt="头像" onerror="this.style.display='none'; document.getElementById('heroAvatarPh').style.display='flex';">
+    <div class="hero-avatar-ph" id="heroAvatarPh" style="display:none;">🙋‍♂️</div>
+    <h1 class="hero-name">【你的姓名】教练</h1>
+    <p class="hero-title">【头衔占位 · 例：国家级健身教练 / 5年私教经验 / 减脂塑形专家】</p>
+</header>
+
+<!-- ==================== 导航条 ==================== -->
+<nav class="navbar" id="navbar">
+    <div class="navbar-inner">
+        <button class="nav-btn active" data-tab="about"    type="button">👤 关于我</button>
+        <button class="nav-btn" data-tab="compare"  type="button">📸 对比照</button>
+        <button class="nav-btn" data-tab="pt"       type="button">💪 私教</button>
+        <button class="nav-btn" data-tab="group"    type="button">👥 团课</button>
+        <button class="nav-btn" data-tab="cert"     type="button">📜 证书</button>
+        <button class="nav-btn" data-tab="online"   type="button">📋 健身指导</button>
+        <button class="nav-btn" data-tab="firstaid" type="button">🚑 急救培训</button>
+        <button class="nav-btn" data-tab="contact"  type="button">📞 联系我</button>
+    </div>
+</nav>
+
+<!-- ==================== 面板区 ==================== -->
+<main class="panels">
+
+    <!-- ============ 1. 关于我 ============ -->
+    <section id="panel-about" class="panel active" data-color="about">
+        <h2 class="section-title"><span class="bar"></span>关于我</h2>
+        <div class="section-desc">
+            <!-- 文案留位：替换为你自己的自我介绍 -->
+            <p class="ph-text">【这里写你的自我介绍，例：】</p>
+            <p>· 从业 X 年，专注减脂塑形 / 增肌 / 体态矫正</p>
+            <p>· 累计服务学员 XX+ 人，总减脂 XXXX 斤</p>
+            <p>· 持有 XX、XX 等专业认证</p>
+            <p>· 教学风格：耐心、专业、因材施教</p>
+        </div>
+        <div class="photo-grid" data-grid="about">
+            <!-- 替换：关于我-1 ~ 6 -->
+            <div class="photo-cell" data-idx="0"><div class="cell-ph"><span class="emoji">📷</span>照片1</div></div>
+            <div class="photo-cell" data-idx="1"><div class="cell-ph"><span class="emoji">📷</span>照片2</div></div>
+            <div class="photo-cell" data-idx="2"><div class="cell-ph"><span class="emoji">📷</span>照片3</div></div>
+            <div class="photo-cell" data-idx="3"><div class="cell-ph"><span class="emoji">📷</span>照片4</div></div>
+            <div class="photo-cell" data-idx="4"><div class="cell-ph"><span class="emoji">📷</span>照片5</div></div>
+            <div class="photo-cell" data-idx="5"><div class="cell-ph"><span class="emoji">📷</span>照片6</div></div>
+        </div>
+    </section>
+
+    <!-- ============ 2. 对比照 ============ -->
+    <section id="panel-compare" class="panel" data-color="compare">
+        <h2 class="section-title"><span class="bar"></span>学员对比照</h2>
+        <div class="section-desc">
+            <p class="ph-text">【一句话文案占位 · 例：真实学员成果，未经PS，效果因人而异】</p>
+        </div>
+        <div class="photo-grid" data-grid="compare">
+            <!-- 替换：对比照-1 ~ 6 -->
+            <div class="photo-cell has-img" data-idx="0"><img src="images/compare-1.jpg" alt=""></div>
+            <div class="photo-cell has-img" data-idx="1"><img src="images/compare-2.jpg" alt=""></div>
+            <div class="photo-cell has-img" data-idx="2"><img src="images/compare-3.jpg" alt=""></div>
+            <div class="photo-cell has-img" data-idx="3"><img src="images/compare-4.jpg" alt=""></div>
+            <div class="photo-cell has-img" data-idx="4"><img src="images/compare-5.jpg" alt=""></div>
+            <div class="photo-cell has-img" data-idx="5"><img src="images/compare-6.jpg" alt=""></div>
+        </div>
+    </section>
+
+    <!-- ============ 3. 私教 ============ -->
+    <section id="panel-pt" class="panel" data-color="pt">
+        <h2 class="section-title"><span class="bar"></span>私教课程</h2>
+        <div class="section-desc">
+            <p class="ph-text">【文案留位 · 例：】</p>
+            <p>· 一对一定制训练计划</p>
+            <p>· 适合人群：减脂 / 增肌 / 塑形 / 产后恢复</p>
+            <p>· 课程时长：60分钟/节</p>
+        </div>
+        <div class="photo-grid" data-grid="pt">
+            <!-- 替换：私教-1 ~ 6 -->
+            <div class="photo-cell has-img" data-idx="0"><img src="images/pt-1.jpg" alt=""></div>
+            <div class="photo-cell" data-idx="1"><div class="cell-ph"><span class="emoji">💪</span>照片2</div></div>
+            <div class="photo-cell" data-idx="2"><div class="cell-ph"><span class="emoji">💪</span>照片3</div></div>
+            <div class="photo-cell" data-idx="3"><div class="cell-ph"><span class="emoji">💪</span>照片4</div></div>
+            <div class="photo-cell" data-idx="4"><div class="cell-ph"><span class="emoji">💪</span>照片5</div></div>
+            <div class="photo-cell" data-idx="5"><div class="cell-ph"><span class="emoji">💪</span>照片6</div></div>
+        </div>
+        <div class="cta-wrap">
+            <button class="cta-btn cta-pt" data-qr="pt" type="button">🎁 立即预约体验课<small>先体验 · 满意再报名 · 不满意不收钱</small></button>
+        </div>
+    </section>
+
+    <!-- ============ 4. 团课 ============ -->
+    <section id="panel-group" class="panel" data-color="group">
+        <h2 class="section-title"><span class="bar"></span>团课课程</h2>
+        <div class="section-desc">
+            <p class="ph-text">【文案留位 · 例：】</p>
+            <p>· 燃脂塑形 / HIIT / 普拉提 / 动感单车</p>
+            <p>· 小班教学，氛围拉满</p>
+            <p>· 每节课 60 分钟</p>
+        </div>
+        <div class="photo-grid" data-grid="group">
+            <!-- 替换：团课-1 ~ 6 -->
+            <div class="photo-cell has-img" data-idx="0"><img src="images/group-1.jpg" alt=""></div>
+            <div class="photo-cell has-img" data-idx="1"><img src="images/group-2.jpg" alt=""></div>
+            <div class="photo-cell has-img" data-idx="2"><img src="images/group-3.jpg" alt=""></div>
+            <div class="photo-cell has-img" data-idx="3"><img src="images/group-4.jpg" alt=""></div>
+            <div class="photo-cell has-img" data-idx="4"><img src="images/group-5.jpg" alt=""></div>
+            <div class="photo-cell has-img" data-idx="5"><img src="images/group-6.jpg" alt=""></div>
+        </div>
+        <div class="cta-wrap">
+            <button class="cta-btn cta-group" data-qr="group" type="button">🎁 立即预约体验课<small>先体验 · 满意再报名 · 不满意不收钱</small></button>
+        </div>
+    </section>
+
+    <!-- ============ 5. 证书 ============ -->
+    <section id="panel-cert" class="panel" data-color="cert">
+        <h2 class="section-title"><span class="bar"></span>专业证书</h2>
+        <div class="section-desc">
+            <p class="ph-text">【文案留位 · 例：持证上岗，专业可靠】</p>
+        </div>
+        <div class="photo-grid" data-grid="cert">
+            <!-- 替换：证书-1 ~ 6 -->
+            <div class="photo-cell has-img" data-idx="0"><img src="images/cert-1.jpg" alt=""></div>
+            <div class="photo-cell" data-idx="1"><div class="cell-ph"><span class="emoji">📜</span>证书2</div></div>
+            <div class="photo-cell" data-idx="2"><div class="cell-ph"><span class="emoji">📜</span>证书3</div></div>
+            <div class="photo-cell" data-idx="3"><div class="cell-ph"><span class="emoji">📜</span>证书4</div></div>
+            <div class="photo-cell" data-idx="4"><div class="cell-ph"><span class="emoji">📜</span>证书5</div></div>
+            <div class="photo-cell" data-idx="5"><div class="cell-ph"><span class="emoji">📜</span>证书6</div></div>
+        </div>
+    </section>
+
+    <!-- ============ 6. 健身指导课（线上） ============ -->
+    <section id="panel-online" class="panel" data-color="online">
+        <h2 class="section-title"><span class="bar"></span>健身指导课</h2>
+        <div class="section-desc">
+            <p class="ph-text">【文案留位 · 例：远程也能练，线上定制指导】</p>
+            <p>· 定制训练计划 + 饮食指导</p>
+            <p>· 微信一对一答疑，随时跟进</p>
+            <p>· 适合没时间到店的上班族</p>
+        </div>
+        <div class="photo-grid" data-grid="online">
+            <!-- 替换：健身指导-1 ~ 6 -->
+            <div class="photo-cell has-img" data-idx="0"><img src="images/online-1.jpg" alt=""></div>
+            <div class="photo-cell has-img" data-idx="1"><img src="images/online-2.jpg" alt=""></div>
+            <div class="photo-cell has-img" data-idx="2"><img src="images/online-3.jpg" alt=""></div>
+            <div class="photo-cell has-img" data-idx="3"><img src="images/online-4.jpg" alt=""></div>
+            <div class="photo-cell has-img" data-idx="4"><img src="images/online-5.jpg" alt=""></div>
+            <div class="photo-cell has-img" data-idx="5"><img src="images/online-6.jpg" alt=""></div>
+        </div>
+        <div class="cta-wrap">
+            <button class="cta-btn cta-online" data-qr="online" type="button">🎁 立即预约体验课<small>先体验 · 满意再报名 · 不满意不收钱</small></button>
+        </div>
+    </section>
+
+    <!-- ============ 7. 急救培训课 ============ -->
+    <section id="panel-firstaid" class="panel" data-color="firstaid">
+        <h2 class="section-title"><span class="bar"></span>急救培训课</h2>
+        <div class="section-desc">
+            <p class="ph-text">【文案留位 · 例：】</p>
+            <p>· 心肺复苏（CPR）+ AED 使用</p>
+            <p>· 海姆立克急救法</p>
+            <p>· 适合教练、教师、家长、企业员工</p>
+        </div>
+        <div class="photo-grid" data-grid="firstaid">
+            <!-- 替换：急救培训-1 ~ 6 -->
+            <div class="photo-cell" data-idx="0"><div class="cell-ph"><span class="emoji">🚑</span>照片1</div></div>
+            <div class="photo-cell" data-idx="1"><div class="cell-ph"><span class="emoji">🚑</span>照片2</div></div>
+            <div class="photo-cell" data-idx="2"><div class="cell-ph"><span class="emoji">🚑</span>照片3</div></div>
+            <div class="photo-cell" data-idx="3"><div class="cell-ph"><span class="emoji">🚑</span>照片4</div></div>
+            <div class="photo-cell" data-idx="4"><div class="cell-ph"><span class="emoji">🚑</span>照片5</div></div>
+            <div class="photo-cell" data-idx="5"><div class="cell-ph"><span class="emoji">🚑</span>照片6</div></div>
+        </div>
+        <div class="cta-wrap">
+            <button class="cta-btn cta-firstaid" data-qr="firstaid" type="button">🎁 立即预约咨询<small>专业急救培训 · 守护身边人</small></button>
+        </div>
+    </section>
+
+    <!-- ============ 8. 联系我 ============ -->
+    <section id="panel-contact" class="panel" data-color="contact">
+        <h2 class="section-title"><span class="bar"></span>联系我</h2>
+        <div class="contact-card">
+            <div class="qrcode-box">
+                <!-- 替换：微信二维码 images/qrcode.jpg -->
+                <img src="images/qrcode.png" alt="微信二维码" onerror="this.style.display='none'; document.getElementById('qrPh').style.display='block';">
+                <div class="qr-ph" id="qrPh">📷 微信二维码<br>占位</div>
+            </div>
+            <p style="font-size:14px;color:#64748b;">👇 长按或扫描二维码加我微信</p>
+        </div>
+        <div class="contact-row">
+            <span class="lab">📱 电话</span>
+            <span class="val" id="phoneVal">【电话占位】</span>
+            <button class="copy-btn" data-copy="phoneVal" type="button">复制</button>
+        </div>
+        <div class="contact-row">
+            <span class="lab">💬 微信</span>
+            <span class="val" id="wechatVal">【微信号占位】</span>
+            <button class="copy-btn" data-copy="wechatVal" type="button">复制</button>
+        </div>
+        <div class="contact-row">
+            <span class="lab">📍 门店</span>
+            <span class="val" id="addrVal">【门店地址占位】</span>
+            <button class="copy-btn" data-copy="addrVal" type="button">复制</button>
+        </div>
+        <div class="contact-row">
+            <span class="lab">🕐 时间</span>
+            <span class="val" id="timeVal">【营业时间占位】</span>
+        </div>
+    </section>
+
+</main>
+
+<!-- ==================== toast ==================== -->
+<div class="toast" id="toast"></div>
+
+<!-- ==================== 大图轮播弹层 ==================== -->
+<div class="viewer" id="viewer">
+    <button class="viewer-close" id="viewerClose" type="button">✕</button>
+    <button class="viewer-nav prev" id="viewerPrev" type="button">‹</button>
+    <button class="viewer-nav next" id="viewerNext" type="button">›</button>
+    <img class="viewer-img" id="viewerImg" src="" alt="">
+    <div class="viewer-bar" id="viewerBar">1 / 6</div>
+</div>
+
+<!-- ==================== 二维码弹层 ==================== -->
+<div class="qr-overlay" id="qrOverlay">
+    <div class="qr-card">
+        <div class="qr-title">🎁 预约体验课</div>
+        <div class="qr-sub">扫描下方二维码，加我微信预约<br>先体验 · 满意再决定</div>
+        <div class="qr-img-box">
+            <!-- 替换：体验课二维码（可与上面微信二维码相同） -->
+            <img src="images/qrcode.png" alt="微信二维码" onerror="this.style.display='none'; document.getElementById('qrOverlayPh').style.display='block';">
+            <div class="qr-ph" id="qrOverlayPh">📷 微信二维码<br>占位</div>
+        </div>
+        <div class="qr-tip">💡 长按二维码可保存到相册，再打开微信扫一扫</div>
+        <button class="qr-close" id="qrClose" type="button">关闭</button>
+    </div>
+</div>
+
+<script>
+/* ========================================================
+ * 1. 导航切换
+ * ====================================================== */
+const navBtns = document.querySelectorAll('.nav-btn');
+const panels = document.querySelectorAll('.panel');
+const navbar = document.getElementById('navbar');
+
+navBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const tab = btn.dataset.tab;
+        navBtns.forEach(b => b.classList.toggle('active', b === btn));
+        panels.forEach(p => p.classList.toggle('active', p.id === 'panel-' + tab));
+        // 滚动导航条让当前按钮可见
+        const btnRect = btn.getBoundingClientRect();
+        const navRect = navbar.getBoundingClientRect();
+        if (btnRect.left < navRect.left + 20 || btnRect.right > navRect.right - 20) {
+            navbar.scrollTo({ left: navbar.scrollLeft + (btnRect.left - navRect.left) - 40, behavior: 'smooth' });
+        }
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+});
+
+/* ========================================================
+ * 2. toast
+ * ====================================================== */
+const toastEl = document.getElementById('toast');
+function toast(msg, type) {
+    toastEl.textContent = msg;
+    toastEl.className = 'toast show' + (type ? ' ' + type : '');
+    clearTimeout(toast._t);
+    toast._t = setTimeout(() => toastEl.classList.remove('show'), 2000);
+}
+
+/* ========================================================
+ * 3. 复制按钮
+ * ====================================================== */
+document.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const target = document.getElementById(btn.dataset.copy);
+        if (!target) return;
+        const text = target.textContent.trim();
+        if (!text || text.includes('占位')) { toast('内容待补充'); return; }
+        if (navigator.clipboard) {
+            navigator.clipboard.writeText(text).then(() => toast('✅ 已复制', 'ok'));
+        } else {
+            const ta = document.createElement('textarea');
+            ta.value = text; document.body.appendChild(ta); ta.select();
+            try { document.execCommand('copy'); toast('✅ 已复制', 'ok'); }
+            catch(e) { toast('复制失败'); }
+            ta.remove();
+        }
+    });
+});
+
+/* ========================================================
+ * 4. 二维码弹层（CTA）
+ * ====================================================== */
+const qrOverlay = document.getElementById('qrOverlay');
+document.querySelectorAll('[data-qr]').forEach(btn => {
+    btn.addEventListener('click', () => qrOverlay.classList.add('open'));
+});
+document.getElementById('qrClose').addEventListener('click', () => qrOverlay.classList.remove('open'));
+qrOverlay.addEventListener('click', e => { if (e.target === qrOverlay) qrOverlay.classList.remove('open'); });
+
+/* ========================================================
+ * 5. 大图轮播弹层
+ * ====================================================== */
+const viewer = document.getElementById('viewer');
+const viewerImg = document.getElementById('viewerImg');
+const viewerBar = document.getElementById('viewerBar');
+const viewerClose = document.getElementById('viewerClose');
+const viewerPrev = document.getElementById('viewerPrev');
+const viewerNext = document.getElementById('viewerNext');
+
+let viewerImages = [];   // 当前网格的所有图片URL
+let viewerIdx = 0;       // 当前查看的索引
+
+function showViewer(idx) {
+    if (!viewerImages.length) return;
+    viewerIdx = (idx + viewerImages.length) % viewerImages.length;
+    viewerImg.src = viewerImages[viewerIdx];
+    viewerBar.textContent = (viewerIdx + 1) + ' / ' + viewerImages.length;
+    viewer.classList.add('open');
+}
+function closeViewer() {
+    viewer.classList.remove('open');
+    viewerImg.src = '';
+}
+
+viewerClose.addEventListener('click', closeViewer);
+viewer.addEventListener('click', e => { if (e.target === viewer) closeViewer(); });
+viewerPrev.addEventListener('click', e => { e.stopPropagation(); showViewer(viewerIdx - 1); });
+viewerNext.addEventListener('click', e => { e.stopPropagation(); showViewer(viewerIdx + 1); });
+
+// 键盘左右切换（桌面端）
+document.addEventListener('keydown', e => {
+    if (!viewer.classList.contains('open')) return;
+    if (e.key === 'ArrowLeft') showViewer(viewerIdx - 1);
+    else if (e.key === 'ArrowRight') showViewer(viewerIdx + 1);
+    else if (e.key === 'Escape') closeViewer();
+});
+
+// 触摸滑动（移动端）
+let touchStartX = 0;
+viewerImg.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+viewerImg.addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(dx) > 50) showViewer(viewerIdx + (dx < 0 ? 1 : -1));
+}, { passive: true });
+
+/* ========================================================
+ * 6. 为每个网格绑定点击 + 收集图片
+ * ====================================================== */
+document.querySelectorAll('.photo-grid').forEach(grid => {
+    const cells = grid.querySelectorAll('.photo-cell');
+    cells.forEach((cell, idx) => {
+        cell.addEventListener('click', () => {
+            // 实时收集当前网格所有图片（以防动态替换）
+            const imgs = grid.querySelectorAll('.photo-cell img');
+            const list = [];
+            imgs.forEach(img => { if (img.src && !img.src.endsWith('/')) list.push(img.src); });
+            if (!list.length) { toast('照片待补充'); return; }
+            viewerImages = list;
+            showViewer(idx);
+        });
+    });
+});
+</script>
+</body>
+</html>
