@@ -166,8 +166,9 @@ body {
     box-shadow: 0 3px 10px rgba(0,0,0,.18);
 }
 .nav-btn[data-tab="about"].active      { background: var(--c-about);    box-shadow: 0 3px 10px rgba(37,99,235,.25); }
-.nav-btn[data-tab="results"].active    { background: var(--c-compare);  box-shadow: 0 3px 10px rgba(236,72,153,.25); }
+.nav-btn[data-tab="cert"].active       { background: var(--c-cert);     box-shadow: 0 3px 10px rgba(124,58,237,.25); }
 .nav-btn[data-tab="service"].active    { background: var(--c-pt);       box-shadow: 0 3px 10px rgba(22,163,74,.25); }
+.nav-btn[data-tab="results"].active    { background: var(--c-compare);  box-shadow: 0 3px 10px rgba(236,72,153,.25); }
 .nav-btn[data-tab="corporate"].active  { background: var(--c-online);   box-shadow: 0 3px 10px rgba(8,145,178,.25); }
 .nav-btn[data-tab="firstaid"].active   { background: var(--c-firstaid); box-shadow: 0 3px 10px rgba(220,38,38,.25); }
 .nav-btn[data-tab="contact"].active    { background: var(--c-contact);  box-shadow: 0 3px 10px rgba(30,64,175,.25); }
@@ -197,8 +198,9 @@ body {
     border-radius: 2px;
     background: var(--c-about);
 }
-.panel[data-color="results"]   .section-title .bar { background: var(--c-compare); }
+.panel[data-color="cert"]      .section-title .bar { background: var(--c-cert); }
 .panel[data-color="service"]   .section-title .bar { background: var(--c-pt); }
+.panel[data-color="results"]   .section-title .bar { background: var(--c-compare); }
 .panel[data-color="corporate"] .section-title .bar { background: var(--c-online); }
 .panel[data-color="firstaid"]  .section-title .bar { background: var(--c-firstaid); }
 .panel[data-color="contact"]   .section-title .bar { background: var(--c-contact); }
@@ -286,6 +288,15 @@ body {
 .cta-group    { background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%); }
 .cta-online   { background: linear-gradient(135deg, #0891b2 0%, #0e7490 100%); }
 .cta-firstaid { background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%); }
+
+/* ==================== 证书3张并排 ==================== */
+.cert-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-bottom: 18px;
+}
+.cert-row .photo-cell { aspect-ratio: 3 / 4; }
 
 /* ==================== 资历卡片 ==================== */
 .cred-card {
@@ -538,10 +549,11 @@ body {
 <nav class="navbar" id="navbar">
     <div class="navbar-inner">
         <button class="nav-btn active" data-tab="about"      type="button">👤 关于我</button>
-        <button class="nav-btn" data-tab="results"     type="button">📸 成果见证</button>
+        <button class="nav-btn" data-tab="cert"        type="button">📜 证书</button>
         <button class="nav-btn" data-tab="service"     type="button">💪 课程服务</button>
-        <button class="nav-btn" data-tab="corporate"   type="button">🏢 单位培训</button>
-        <button class="nav-btn" data-tab="firstaid"    type="button">🚑 急救培训</button>
+        <button class="nav-btn" data-tab="results"     type="button">📸 对比照</button>
+        <button class="nav-btn" data-tab="corporate"   type="button">🏢 单位健身师资</button>
+        <button class="nav-btn" data-tab="firstaid"    type="button">🚑 红十字急救师资</button>
         <button class="nav-btn" data-tab="contact"     type="button">📞 联系我</button>
     </div>
 </nav>
@@ -549,6 +561,7 @@ body {
 <!-- ==================== 面板区 ==================== -->
 <main class="panels">
 
+    <!-- ============ 1. 关于我 ============ -->
     <!-- ============ 1. 关于我 ============ -->
     <section id="panel-about" class="panel active" data-color="about">
         <h2 class="section-title"><span class="bar"></span>关于我</h2>
@@ -561,8 +574,11 @@ body {
             <p>想好好减脂、能信任我的老乡，我们一起开始。<strong>不卖焦虑，只教方法</strong>。</p>
             <p>🚀 正在找第一批学员，缘分很关键。</p>
         </div>
+    </section>
 
-        <!-- 资历卡片 -->
+    <!-- ============ 2. 证书 ============ -->
+    <section id="panel-cert" class="panel" data-color="cert">
+        <h2 class="section-title"><span class="bar"></span>证书</h2>
         <div class="cred-card">
             <div class="cred-title">🏆 专业资质</div>
             <ul class="cred-list">
@@ -572,26 +588,59 @@ body {
                 <li><span class="ico">🆘</span><span>蓝天救援技能证</span></li>
             </ul>
         </div>
-
-        <!-- 证书照片墙（原证书模块合并） -->
-        <h2 class="section-title" style="margin-top:18px;"><span class="bar"></span>证书展示</h2>
-        <div class="photo-grid" data-grid="cert">
+        <div class="cert-row" data-grid="cert">
             <div class="photo-cell has-img" data-idx="0"><img src="images/cert-1.jpg" alt=""></div>
             <div class="photo-cell has-img" data-idx="1"><img src="images/cert-2.jpg" alt=""></div>
             <div class="photo-cell has-img" data-idx="2"><img src="images/cert-3.jpg" alt=""></div>
-            <div class="photo-cell" data-idx="3"><div class="cell-ph"><span class="emoji">📜</span>证书4</div></div>
-            <div class="photo-cell" data-idx="4"><div class="cell-ph"><span class="emoji">📜</span>证书5</div></div>
-            <div class="photo-cell" data-idx="5"><div class="cell-ph"><span class="emoji">📜</span>证书6</div></div>
         </div>
     </section>
 
-    <!-- ============ 2. 学员成果与见证 ============ -->
+    <!-- ============ 3. 课程服务 ============ -->
+    <section id="panel-service" class="panel" data-color="service">
+        <h2 class="section-title"><span class="bar"></span>课程服务</h2>
+        <div class="section-desc">
+            <p><strong>👥 团课</strong></p>
+            <p>· 燃脂塑形 / HIIT / 普拉提 / 动感单车</p>
+            <p>· 小班教学，氛围拉满，每节课 60 分钟</p>
+        </div>
+        <div class="photo-grid" data-grid="service-group">
+            <div class="photo-cell has-img" data-idx="0"><img src="images/group-1.jpg" alt=""></div>
+            <div class="photo-cell has-img" data-idx="1"><img src="images/group-2.jpg" alt=""></div>
+            <div class="photo-cell has-img" data-idx="2"><img src="images/group-3.jpg" alt=""></div>
+            <div class="photo-cell has-img" data-idx="3"><img src="images/group-4.jpg" alt=""></div>
+            <div class="photo-cell has-img" data-idx="4"><img src="images/group-5.jpg" alt=""></div>
+            <div class="photo-cell has-img" data-idx="5"><img src="images/group-6.jpg" alt=""></div>
+        </div>
+        <h3 style="font-size:14px;color:#64748b;margin:14px 0 8px;font-weight:600;">🤝 学员见证</h3>
+        <div class="photo-grid" data-grid="service-testimonial">
+            <div class="photo-cell has-img" data-idx="0"><img src="images/testimonial-1.jpg" alt=""></div>
+            <div class="photo-cell has-img" data-idx="1"><img src="images/testimonial-2.jpg" alt=""></div>
+            <div class="photo-cell has-img" data-idx="2"><img src="images/testimonial-3.jpg" alt=""></div>
+            <div class="photo-cell has-img" data-idx="3"><img src="images/testimonial-4.jpg" alt=""></div>
+            <div class="photo-cell has-img" data-idx="4"><img src="images/testimonial-5.jpg" alt=""></div>
+            <div class="photo-cell has-img" data-idx="5"><img src="images/testimonial-6.jpg" alt=""></div>
+        </div>
+        <h3 style="font-size:14px;color:#64748b;margin:14px 0 8px;font-weight:600;">🏔️ 户外同行</h3>
+        <div class="section-desc" style="margin-bottom:8px;padding:10px 14px;">
+            <p style="font-size:13px;">经常组织学员爬山、跑马拉松——健身不只在健身房，更是一种生活方式。</p>
+        </div>
+        <div class="photo-grid" data-grid="service-outdoor">
+            <div class="photo-cell has-img" data-idx="0"><img src="images/outdoor-2.jpg" alt=""></div>
+            <div class="photo-cell has-img" data-idx="1"><img src="images/outdoor-3.jpg" alt=""></div>
+            <div class="photo-cell has-img" data-idx="2"><img src="images/outdoor-4.jpg" alt=""></div>
+            <div class="photo-cell has-img" data-idx="3"><img src="images/outdoor-5.jpg" alt=""></div>
+        </div>
+        <div class="cta-wrap">
+            <button class="cta-btn cta-pt" data-qr="service" type="button">🎁 立即预约体验课<small>先体验 · 满意再报名 · 不满意不收钱</small></button>
+        </div>
+    </section>
+
+    <!-- ============ 4. 对比照 ============ -->
     <section id="panel-results" class="panel" data-color="results">
-        <h2 class="section-title"><span class="bar"></span>学员成果与见证</h2>
+        <h2 class="section-title"><span class="bar"></span>对比照</h2>
         <div class="section-desc" style="text-align:center;">
             <p><strong>真实学员成果</strong>，未经PS，效果因人而异</p>
         </div>
-        <h3 style="font-size:14px;color:#64748b;margin:6px 0 8px;font-weight:600;">📏 身材变化</h3>
         <div class="photo-grid" data-grid="results-compare">
             <div class="photo-cell has-img" data-idx="0"><img src="images/compare-1.jpg" alt=""></div>
             <div class="photo-cell has-img" data-idx="1"><img src="images/compare-2.jpg" alt=""></div>
@@ -600,47 +649,11 @@ body {
             <div class="photo-cell has-img" data-idx="4"><img src="images/compare-5.jpg" alt=""></div>
             <div class="photo-cell has-img" data-idx="5"><img src="images/compare-6.jpg" alt=""></div>
         </div>
-        <h3 style="font-size:14px;color:#64748b;margin:14px 0 8px;font-weight:600;">🤝 学员见证</h3>
-        <div class="photo-grid" data-grid="results-testimonial">
-            <div class="photo-cell has-img" data-idx="0"><img src="images/testimonial-1.jpg" alt=""></div>
-            <div class="photo-cell has-img" data-idx="1"><img src="images/testimonial-2.jpg" alt=""></div>
-            <div class="photo-cell has-img" data-idx="2"><img src="images/testimonial-3.jpg" alt=""></div>
-            <div class="photo-cell has-img" data-idx="3"><img src="images/testimonial-4.jpg" alt=""></div>
-            <div class="photo-cell has-img" data-idx="4"><img src="images/testimonial-5.jpg" alt=""></div>
-            <div class="photo-cell has-img" data-idx="5"><img src="images/testimonial-6.jpg" alt=""></div>
-        </div>
     </section>
 
-    <!-- ============ 3. 课程服务（私教+团课合并） ============ -->
-    <section id="panel-service" class="panel" data-color="service">
-        <h2 class="section-title"><span class="bar"></span>课程服务</h2>
-        <div class="section-desc">
-            <p><strong>💪 私教课</strong></p>
-            <p>· 一对一定制训练计划，针对减脂/增肌/塑形/产后恢复</p>
-            <p>· 课程时长：60分钟/节</p>
-            <p style="margin-top:10px;"><strong>👥 团课</strong></p>
-            <p>· 燃脂塑形 / HIIT / 普拉提 / 动感单车</p>
-            <p>· 小班教学，氛围拉满</p>
-        </div>
-        <div class="photo-grid" data-grid="service">
-            <div class="photo-cell has-img" data-idx="0"><img src="images/pt-1.jpg" alt=""></div>
-            <div class="photo-cell has-img" data-idx="1"><img src="images/group-1.jpg" alt=""></div>
-            <div class="photo-cell has-img" data-idx="2"><img src="images/group-2.jpg" alt=""></div>
-            <div class="photo-cell has-img" data-idx="3"><img src="images/group-3.jpg" alt=""></div>
-            <div class="photo-cell has-img" data-idx="4"><img src="images/group-4.jpg" alt=""></div>
-            <div class="photo-cell has-img" data-idx="5"><img src="images/group-5.jpg" alt=""></div>
-            <div class="photo-cell has-img" data-idx="6"><img src="images/group-6.jpg" alt=""></div>
-            <div class="photo-cell" data-idx="7"><div class="cell-ph"><span class="emoji">💪</span>照片8</div></div>
-            <div class="photo-cell" data-idx="8"><div class="cell-ph"><span class="emoji">💪</span>照片9</div></div>
-        </div>
-        <div class="cta-wrap">
-            <button class="cta-btn cta-pt" data-qr="service" type="button">🎁 立即预约体验课<small>先体验 · 满意再报名 · 不满意不收钱</small></button>
-        </div>
-    </section>
-
-    <!-- ============ 4. 单位健身培训 ============ -->
+    <!-- ============ 5. 单位健身师资 ============ -->
     <section id="panel-corporate" class="panel" data-color="corporate">
-        <h2 class="section-title"><span class="bar"></span>单位健身培训</h2>
+        <h2 class="section-title"><span class="bar"></span>单位健身师资</h2>
         <div class="section-desc">
             <p>面向<strong>企业、机关、单位</strong>的定制健身培训服务。</p>
             <p>· 员工团课 / 健康讲座 / 减脂挑战赛</p>
@@ -660,9 +673,9 @@ body {
         </div>
     </section>
 
-    <!-- ============ 5. 急救培训 ============ -->
+    <!-- ============ 6. 红十字急救师资 ============ -->
     <section id="panel-firstaid" class="panel" data-color="firstaid">
-        <h2 class="section-title"><span class="bar"></span>急救培训</h2>
+        <h2 class="section-title"><span class="bar"></span>红十字急救师资</h2>
         <div class="section-desc">
             <p><strong>红十字急救师资 + 蓝天救援队成员</strong>，专业急救培训服务。</p>
             <p>· 心肺复苏（CPR）+ AED 使用</p>
@@ -682,7 +695,7 @@ body {
         </div>
     </section>
 
-    <!-- ============ 6. 联系我 ============ -->
+    <!-- ============ 7. 联系我 ============ -->
     <section id="panel-contact" class="panel" data-color="contact">
         <h2 class="section-title"><span class="bar"></span>联系我</h2>
         <div class="contact-card">
