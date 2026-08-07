@@ -342,7 +342,7 @@ body {
 }
 .qrcode-box {
     width: 100%;
-    max-width: 320px;
+    max-width: 292px;
     aspect-ratio: 3 / 4;
     margin: 0 auto 14px;
     border-radius: 12px;
@@ -552,7 +552,7 @@ body {
         <button class="nav-btn" data-tab="cert"        type="button">📜 证书</button>
         <button class="nav-btn" data-tab="service"     type="button">💪 课程服务</button>
         <button class="nav-btn" data-tab="results"     type="button">📸 对比照</button>
-        <button class="nav-btn" data-tab="corporate"   type="button">🏢 单位健身师资</button>
+        <button class="nav-btn" data-tab="corporate"   type="button">🏢 单位健身教练</button>
         <button class="nav-btn" data-tab="firstaid"    type="button">🚑 红十字急救师资</button>
         <button class="nav-btn" data-tab="contact"     type="button">📞 联系我</button>
     </div>
@@ -586,6 +586,7 @@ body {
                 <li><span class="ico">💪</span><span>国家健身教练证（国家体育局颁发）</span></li>
                 <li><span class="ico">🚑</span><span>中国红十字急救师资</span></li>
                 <li><span class="ico">🆘</span><span>蓝天救援技能证</span></li>
+                <li><span class="ico">🎓</span><span>体育教育专业（本科）</span></li>
             </ul>
         </div>
         <div class="cert-row" data-grid="cert">
@@ -599,9 +600,14 @@ body {
     <section id="panel-service" class="panel" data-color="service">
         <h2 class="section-title"><span class="bar"></span>课程服务</h2>
         <div class="section-desc">
-            <p><strong>👥 团课</strong></p>
-            <p>· 燃脂塑形 / HIIT / 普拉提 / 动感单车</p>
-            <p>· 小班教学，氛围拉满，每节课 60 分钟</p>
+            <p><strong>🎯 私教课</strong></p>
+            <p>· 一对一定制训练计划</p>
+            <p>· 适合减脂 / 增肌 / 塑形</p>
+            <p>· 全程1对1跟进饮食和训练，效果有保障</p>
+            <p style="margin-top:10px;"><strong>👥 团课</strong></p>
+            <p>· 燃脂塑形 / 含饮食指导</p>
+            <p>· 小班教学，氛围拉满</p>
+            <p>· 每节课 60 分钟</p>
         </div>
         <div class="photo-grid" data-grid="service-group">
             <div class="photo-cell has-img" data-idx="0"><img src="images/group-1.jpg" alt=""></div>
@@ -625,10 +631,12 @@ body {
             <p style="font-size:13px;">经常组织学员爬山、跑马拉松——健身不只在健身房，更是一种生活方式。</p>
         </div>
         <div class="photo-grid" data-grid="service-outdoor">
-            <div class="photo-cell has-img" data-idx="0"><img src="images/outdoor-2.jpg" alt=""></div>
-            <div class="photo-cell has-img" data-idx="1"><img src="images/outdoor-3.jpg" alt=""></div>
-            <div class="photo-cell has-img" data-idx="2"><img src="images/outdoor-4.jpg" alt=""></div>
-            <div class="photo-cell has-img" data-idx="3"><img src="images/outdoor-5.jpg" alt=""></div>
+            <div class="photo-cell has-img" data-idx="0"><img src="images/outdoor-1.jpg" alt=""></div>
+            <div class="photo-cell has-img" data-idx="1"><img src="images/outdoor-2.jpg" alt=""></div>
+            <div class="photo-cell has-img" data-idx="2"><img src="images/outdoor-3.jpg" alt=""></div>
+            <div class="photo-cell has-img" data-idx="3"><img src="images/outdoor-4.jpg" alt=""></div>
+            <div class="photo-cell has-img" data-idx="4"><img src="images/outdoor-5.jpg" alt=""></div>
+            <div class="photo-cell has-img" data-idx="5"><img src="images/outdoor-6.jpg" alt=""></div>
         </div>
         <div class="cta-wrap">
             <button class="cta-btn cta-pt" data-qr="service" type="button">🎁 立即预约体验课<small>先体验 · 满意再报名 · 不满意不收钱</small></button>
@@ -651,14 +659,12 @@ body {
         </div>
     </section>
 
-    <!-- ============ 5. 单位健身师资 ============ -->
+    <!-- ============ 5. 单位健身教练 ============ -->
     <section id="panel-corporate" class="panel" data-color="corporate">
-        <h2 class="section-title"><span class="bar"></span>单位健身师资</h2>
+        <h2 class="section-title"><span class="bar"></span>单位健身教练</h2>
         <div class="section-desc">
-            <p>面向<strong>企业、机关、单位</strong>的定制健身培训服务。</p>
-            <p>· 员工团课 / 健康讲座 / 减脂挑战赛</p>
-            <p>· 可定制课程内容，到店或上门均可</p>
-            <p>· 提升员工健康与团队凝聚力</p>
+            <p><strong>多个单位指定的健身指导教练。</strong></p>
+            <p>受单位邀请，到单位健身房进行器材使用培训。</p>
         </div>
         <div class="photo-grid" data-grid="corporate">
             <div class="photo-cell has-img" data-idx="0"><img src="images/corporate-1.jpg" alt=""></div>
@@ -677,10 +683,8 @@ body {
     <section id="panel-firstaid" class="panel" data-color="firstaid">
         <h2 class="section-title"><span class="bar"></span>红十字急救师资</h2>
         <div class="section-desc">
-            <p><strong>红十字急救师资 + 蓝天救援队成员</strong>，专业急救培训服务。</p>
-            <p>· 心肺复苏（CPR）+ AED 使用</p>
-            <p>· 海姆立克急救法</p>
-            <p>· 适合教练、教师、家长、企业员工</p>
+            <p><strong>红十字认证急救师资，蓝天救援队成员。</strong></p>
+            <p>教授心肺复苏、AED使用、海姆立克等急救技能。</p>
         </div>
         <div class="photo-grid" data-grid="firstaid">
             <div class="photo-cell has-img" data-idx="0"><img src="images/firstaid-1.jpg" alt=""></div>
