@@ -573,6 +573,12 @@ body {
             <p><strong>所以这趟回来，就想干件实在事：把10年的本事，用在自己人身上。</strong></p>
             <p>想好好减脂、能信任我的老乡，我们一起开始。<strong>不卖焦虑，只教方法</strong>。</p>
             <p>🚀 正在找第一批学员，缘分很关键。</p>
+            <p style="margin-top:12px;">🎁 <strong>第一批学员专享：免费体验课一节</strong></p>
+            <p>含：体态分析 + 训练建议 + 饮食指导 + 现场带练</p>
+            <p>先体验，满意了再考虑报课的事。</p>
+        </div>
+        <div class="cta-wrap">
+            <button class="cta-btn cta-pt" id="aboutContactBtn" type="button">🎁 预约免费体验课<small>跳转联系我 · 加微信预约</small></button>
         </div>
     </section>
 
@@ -638,9 +644,6 @@ body {
             <div class="photo-cell has-img" data-idx="4"><img src="images/outdoor-5.jpg" alt=""></div>
             <div class="photo-cell has-img" data-idx="5"><img src="images/outdoor-6.jpg" alt=""></div>
         </div>
-        <div class="cta-wrap">
-            <button class="cta-btn cta-pt" data-qr="service" type="button">🎁 立即预约体验课<small>先体验 · 满意再报名 · 不满意不收钱</small></button>
-        </div>
     </section>
 
     <!-- ============ 4. 对比照 ============ -->
@@ -674,9 +677,6 @@ body {
             <div class="photo-cell has-img" data-idx="4"><img src="images/corporate-5.jpg" alt=""></div>
             <div class="photo-cell has-img" data-idx="5"><img src="images/corporate-6.jpg" alt=""></div>
         </div>
-        <div class="cta-wrap">
-            <button class="cta-btn cta-online" data-qr="corporate" type="button">🎁 立即预约咨询<small>企业定制方案 · 价格详询</small></button>
-        </div>
     </section>
 
     <!-- ============ 6. 红十字急救师资 ============ -->
@@ -693,9 +693,6 @@ body {
             <div class="photo-cell has-img" data-idx="3"><img src="images/firstaid-4.jpg" alt=""></div>
             <div class="photo-cell has-img" data-idx="4"><img src="images/firstaid-5.jpg" alt=""></div>
             <div class="photo-cell has-img" data-idx="5"><img src="images/firstaid-6.jpg" alt=""></div>
-        </div>
-        <div class="cta-wrap">
-            <button class="cta-btn cta-firstaid" data-qr="firstaid" type="button">🎁 立即预约咨询<small>专业急救培训 · 守护身边人</small></button>
         </div>
     </section>
 
@@ -801,6 +798,14 @@ document.querySelectorAll('.copy-btn').forEach(btn => {
             ta.remove();
         }
     });
+});
+
+/* ========================================================
+ * 3.5 关于我按钮：点击跳转联系我
+ * ====================================================== */
+document.getElementById('aboutContactBtn').addEventListener('click', () => {
+    const contactBtn = document.querySelector('.nav-btn[data-tab="contact"]');
+    contactBtn.click();
 });
 
 /* ========================================================
