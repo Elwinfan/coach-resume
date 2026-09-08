@@ -548,10 +548,10 @@ body {
 <!-- ==================== 导航条 ==================== -->
 <nav class="navbar" id="navbar">
     <div class="navbar-inner">
-        <button class="nav-btn active" data-tab="about"      type="button">👤 关于我</button>
+        <button class="nav-btn active" data-tab="results"    type="button">📸 对比照</button>
+        <button class="nav-btn" data-tab="service"     type="button">📷 授课照片</button>
+        <button class="nav-btn" data-tab="about"       type="button">👤 关于我</button>
         <button class="nav-btn" data-tab="cert"        type="button">📜 证书</button>
-        <button class="nav-btn" data-tab="service"     type="button">💪 课程服务</button>
-        <button class="nav-btn" data-tab="results"     type="button">📸 对比照</button>
         <button class="nav-btn" data-tab="corporate"   type="button">🏢 单位健身教练</button>
         <button class="nav-btn" data-tab="firstaid"    type="button">🚑 红十字急救师资</button>
         <button class="nav-btn" data-tab="contact"     type="button">📞 联系我</button>
@@ -562,50 +562,25 @@ body {
 <main class="panels">
 
     <!-- ============ 1. 关于我 ============ -->
-    <!-- ============ 1. 关于我 ============ -->
-    <section id="panel-about" class="panel active" data-color="about">
-        <h2 class="section-title"><span class="bar"></span>关于我</h2>
-        <div class="section-desc">
-            <p><strong>我是何非凡，晋江灵源人。</strong></p>
-            <p><strong>体育教育专业</strong>出身，2016年入行做健身教练，带过上百人减脂，也开过两家店。在外面漂了8年，最后还是想回家。</p>
-            <p>现在回到晋江，以<strong>独立教练</strong>身份重新开始。</p>
-            <p>带人减脂这么多年，弯路我见太多了——节食饿到反弹的、乱吃药的、疯狂有氧把自己练废的，折腾半天又累又没瘦。</p>
-            <p><strong>所以这趟回来，就想干件实在事：把10年的本事，用在自己人身上。</strong></p>
-            <p>想好好减脂、能信任我的老乡，我们一起开始。<strong>不卖焦虑，只教方法</strong>。</p>
-            <p>🚀 如果你也想改变，来找我聊聊。</p>
+    <!-- ============ 1. 对比照 ============ -->
+    <section id="panel-results" class="panel active" data-color="results">
+        <h2 class="section-title"><span class="bar"></span>对比照</h2>
+        <div class="section-desc" style="text-align:center;">
+            <p><strong>真实学员成果</strong>，未经PS，效果因人而异</p>
         </div>
-        <div class="cta-wrap">
-            <button class="cta-btn cta-pt" id="aboutContactBtn" type="button">🎁 预约免费体验课<small>先体验，满意了再考虑报课的事</small></button>
-            <div style="margin-top:14px;padding:12px 14px;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:11px;font-size:13px;color:#15803d;line-height:1.7;">
-                🎁 <strong>第一批学员专享：免费体验课一节</strong><br>
-                含：体态分析 + 训练建议 + 饮食指导 + 现场带练
-            </div>
+        <div class="photo-grid" data-grid="results-compare">
+            <div class="photo-cell has-img" data-idx="0"><img src="images/compare-1.jpg" alt=""></div>
+            <div class="photo-cell has-img" data-idx="1"><img src="images/compare-2.jpg" alt=""></div>
+            <div class="photo-cell has-img" data-idx="2"><img src="images/compare-3.jpg" alt=""></div>
+            <div class="photo-cell has-img" data-idx="3"><img src="images/compare-4.jpg" alt=""></div>
+            <div class="photo-cell has-img" data-idx="4"><img src="images/compare-5.jpg" alt=""></div>
+            <div class="photo-cell has-img" data-idx="5"><img src="images/compare-6.jpg" alt=""></div>
         </div>
     </section>
 
-    <!-- ============ 2. 证书 ============ -->
-    <section id="panel-cert" class="panel" data-color="cert">
-        <h2 class="section-title"><span class="bar"></span>证书</h2>
-        <div class="cred-card">
-            <div class="cred-title">🏆 专业资质</div>
-            <ul class="cred-list">
-                <li><span class="ico">🎓</span><span>体育教育专业</span></li>
-                <li><span class="ico">🏃</span><span>中国田径协会教练员</span></li>
-                <li><span class="ico">💪</span><span>国家健身教练证（国家体育局颁发）</span></li>
-                <li><span class="ico">🚑</span><span>中国红十字急救师资</span></li>
-                <li><span class="ico">🆘</span><span>蓝天救援技能证</span></li>
-            </ul>
-        </div>
-        <div class="cert-row" data-grid="cert">
-            <div class="photo-cell has-img" data-idx="0"><img src="images/cert-1.jpg" alt=""></div>
-            <div class="photo-cell has-img" data-idx="1"><img src="images/cert-2.jpg" alt=""></div>
-            <div class="photo-cell has-img" data-idx="2"><img src="images/cert-3.jpg" alt=""></div>
-        </div>
-    </section>
-
-    <!-- ============ 3. 课程服务 ============ -->
+    <!-- ============ 2. 授课照片 ============ -->
     <section id="panel-service" class="panel" data-color="service">
-        <h2 class="section-title"><span class="bar"></span>课程服务</h2>
+        <h2 class="section-title"><span class="bar"></span>授课照片</h2>
         <div class="section-desc">
             <p><strong>🎯 私教课</strong></p>
             <p>· 一对一定制训练计划</p>
@@ -647,19 +622,44 @@ body {
         </div>
     </section>
 
-    <!-- ============ 4. 对比照 ============ -->
-    <section id="panel-results" class="panel" data-color="results">
-        <h2 class="section-title"><span class="bar"></span>对比照</h2>
-        <div class="section-desc" style="text-align:center;">
-            <p><strong>真实学员成果</strong>，未经PS，效果因人而异</p>
+    <!-- ============ 3. 关于我 ============ -->
+    <section id="panel-about" class="panel" data-color="about">
+        <h2 class="section-title"><span class="bar"></span>关于我</h2>
+        <div class="section-desc">
+            <p><strong>我是何非凡，晋江灵源人。</strong></p>
+            <p><strong>体育教育专业</strong>出身，2016年入行做健身教练，带过上百人减脂，也开过两家店。在外面漂了8年，最后还是想回家。</p>
+            <p>现在回到晋江，以<strong>独立教练</strong>身份重新开始。</p>
+            <p>带人减脂这么多年，弯路我见太多了——节食饿到反弹的、乱吃药的、疯狂有氧把自己练废的，折腾半天又累又没瘦。</p>
+            <p><strong>所以这趟回来，就想干件实在事：把10年的本事，用在自己人身上。</strong></p>
+            <p>想好好减脂、能信任我的老乡，我们一起开始。<strong>不卖焦虑，只教方法</strong>。</p>
+            <p>🚀 如果你也想改变，来找我聊聊。</p>
         </div>
-        <div class="photo-grid" data-grid="results-compare">
-            <div class="photo-cell has-img" data-idx="0"><img src="images/compare-1.jpg" alt=""></div>
-            <div class="photo-cell has-img" data-idx="1"><img src="images/compare-2.jpg" alt=""></div>
-            <div class="photo-cell has-img" data-idx="2"><img src="images/compare-3.jpg" alt=""></div>
-            <div class="photo-cell has-img" data-idx="3"><img src="images/compare-4.jpg" alt=""></div>
-            <div class="photo-cell has-img" data-idx="4"><img src="images/compare-5.jpg" alt=""></div>
-            <div class="photo-cell has-img" data-idx="5"><img src="images/compare-6.jpg" alt=""></div>
+        <div class="cta-wrap">
+            <button class="cta-btn cta-pt" id="aboutContactBtn" type="button">🎁 预约免费体验课<small>先体验，满意了再考虑报课的事</small></button>
+            <div style="margin-top:14px;padding:12px 14px;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:11px;font-size:13px;color:#15803d;line-height:1.7;">
+                🎁 <strong>第一批学员专享：免费体验课一节</strong><br>
+                含：体态分析 + 训练建议 + 饮食指导 + 现场带练
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ 4. 证书 ============ -->
+    <section id="panel-cert" class="panel" data-color="cert">
+        <h2 class="section-title"><span class="bar"></span>证书</h2>
+        <div class="cred-card">
+            <div class="cred-title">🏆 专业资质</div>
+            <ul class="cred-list">
+                <li><span class="ico">🎓</span><span>体育教育专业</span></li>
+                <li><span class="ico">🏃</span><span>中国田径协会教练员</span></li>
+                <li><span class="ico">💪</span><span>国家健身教练证（国家体育局颁发）</span></li>
+                <li><span class="ico">🚑</span><span>中国红十字急救师资</span></li>
+                <li><span class="ico">🆘</span><span>蓝天救援技能证</span></li>
+            </ul>
+        </div>
+        <div class="cert-row" data-grid="cert">
+            <div class="photo-cell has-img" data-idx="0"><img src="images/cert-1.jpg" alt=""></div>
+            <div class="photo-cell has-img" data-idx="1"><img src="images/cert-2.jpg" alt=""></div>
+            <div class="photo-cell has-img" data-idx="2"><img src="images/cert-3.jpg" alt=""></div>
         </div>
     </section>
 
