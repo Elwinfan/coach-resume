@@ -130,48 +130,40 @@ body {
     line-height: 1.6;
 }
 
-/* ==================== 顶部导航条（横向滚动分段按钮） ==================== */
-.navbar {
-    position: sticky;
-    top: 0;
+/* ==================== 底部Tab栏 ==================== */
+.tabbar {
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
     z-index: 30;
     background: #fff;
-    box-shadow: 0 2px 12px rgba(0,0,0,.08);
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-}
-.navbar::-webkit-scrollbar { display: none; }
-.navbar-inner {
+    box-shadow: 0 -2px 12px rgba(0,0,0,.08);
     display: flex;
-    gap: 8px;
-    padding: 10px 12px;
-    min-width: max-content;
+    padding-bottom: env(safe-area-inset-bottom, 0px);
 }
-.nav-btn {
-    flex: none;
-    padding: 10px 14px;
+.tab-btn {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    padding: 8px 0 7px;
     border: none;
-    background: #f1f5f9;
-    border-radius: 9px;
-    font-size: 14px;
+    background: none;
+    font-size: 11px;
     font-weight: 600;
-    color: #64748b;
+    color: #94a3b8;
     cursor: pointer;
-    white-space: nowrap;
-    transition: all .2s;
+    -webkit-tap-highlight-color: transparent;
 }
-.nav-btn.active {
-    color: #fff;
-    box-shadow: 0 3px 10px rgba(0,0,0,.18);
-}
-.nav-btn[data-tab="about"].active      { background: var(--c-about);    box-shadow: 0 3px 10px rgba(37,99,235,.25); }
-.nav-btn[data-tab="cert"].active       { background: var(--c-cert);     box-shadow: 0 3px 10px rgba(124,58,237,.25); }
-.nav-btn[data-tab="service"].active    { background: var(--c-pt);       box-shadow: 0 3px 10px rgba(22,163,74,.25); }
-.nav-btn[data-tab="results"].active    { background: var(--c-compare);  box-shadow: 0 3px 10px rgba(236,72,153,.25); }
-.nav-btn[data-tab="corporate"].active  { background: var(--c-online);   box-shadow: 0 3px 10px rgba(8,145,178,.25); }
-.nav-btn[data-tab="firstaid"].active   { background: var(--c-firstaid); box-shadow: 0 3px 10px rgba(220,38,38,.25); }
-.nav-btn[data-tab="contact"].active    { background: var(--c-contact);  box-shadow: 0 3px 10px rgba(30,64,175,.25); }
+.tab-btn .t-ico { font-size: 21px; line-height: 1; transition: transform .15s; }
+.tab-btn.active { color: var(--tab-color, #2563eb); }
+.tab-btn.active .t-ico { transform: scale(1.12); }
+.tab-btn[data-tab="about"]   { --tab-color: var(--c-about); }
+.tab-btn[data-tab="results"] { --tab-color: var(--c-compare); }
+.tab-btn[data-tab="service"] { --tab-color: var(--c-pt); }
+.tab-btn[data-tab="cert"]    { --tab-color: var(--c-cert); }
+.tab-btn[data-tab="contact"] { --tab-color: var(--c-contact); }
+body { padding-bottom: 66px; }
 
 /* ==================== 面板容器 ==================== */
 .panels {
@@ -545,25 +537,42 @@ body {
     <p class="hero-title">10年教练经历 · 健身 / 体能 / 企业课程 / 急救课程 / 蓝天救援</p>
 </header>
 
-<!-- ==================== 导航条 ==================== -->
-<nav class="navbar" id="navbar">
-    <div class="navbar-inner">
-        <button class="nav-btn active" data-tab="results"    type="button">📸 对比照</button>
-        <button class="nav-btn" data-tab="service"     type="button">📷 授课照片</button>
-        <button class="nav-btn" data-tab="about"       type="button">👤 关于我</button>
-        <button class="nav-btn" data-tab="cert"        type="button">📜 证书</button>
-        <button class="nav-btn" data-tab="corporate"   type="button">🏢 单位健身教练</button>
-        <button class="nav-btn" data-tab="firstaid"    type="button">🚑 红十字急救师资</button>
-        <button class="nav-btn" data-tab="contact"     type="button">📞 联系我</button>
-    </div>
+<!-- ==================== 底部Tab栏 ==================== -->
+<nav class="tabbar" id="tabbar">
+    <button class="tab-btn active" data-tab="about"   type="button"><span class="t-ico">🏠</span>首页</button>
+    <button class="tab-btn" data-tab="results" type="button"><span class="t-ico">📸</span>成果</button>
+    <button class="tab-btn" data-tab="service" type="button"><span class="t-ico">📷</span>授课</button>
+    <button class="tab-btn" data-tab="cert"    type="button"><span class="t-ico">📜</span>证书</button>
+    <button class="tab-btn" data-tab="contact" type="button"><span class="t-ico">📞</span>联系</button>
 </nav>
 
 <!-- ==================== 面板区 ==================== -->
 <main class="panels">
 
     <!-- ============ 1. 关于我 ============ -->
-    <!-- ============ 1. 对比照 ============ -->
-    <section id="panel-results" class="panel active" data-color="results">
+    <!-- ============ 1. 关于我 ============ -->
+    <section id="panel-about" class="panel active" data-color="about">
+        <h2 class="section-title"><span class="bar"></span>关于我</h2>
+        <div class="section-desc">
+            <p><strong>我是何非凡，晋江灵源人。</strong></p>
+            <p><strong>体育教育专业</strong>出身，2016年入行做健身教练，带过上百人减脂，也开过两家店。在外面漂了8年，最后还是想回家。</p>
+            <p>现在回到晋江，以<strong>独立教练</strong>身份重新开始。</p>
+            <p>带人减脂这么多年，弯路我见太多了——节食饿到反弹的、乱吃药的、疯狂有氧把自己练废的，折腾半天又累又没瘦。</p>
+            <p><strong>所以这趟回来，就想干件实在事：把10年的本事，用在自己人身上。</strong></p>
+            <p>想好好减脂、能信任我的老乡，我们一起开始。<strong>不卖焦虑，只教方法</strong>。</p>
+            <p>🚀 如果你也想改变，来找我聊聊。</p>
+        </div>
+        <div class="cta-wrap">
+            <button class="cta-btn cta-pt" id="aboutContactBtn" type="button">🎁 预约免费体验课<small>先体验，满意了再考虑报课的事</small></button>
+            <div style="margin-top:14px;padding:12px 14px;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:11px;font-size:13px;color:#15803d;line-height:1.7;">
+                🎁 <strong>第一批学员专享：免费体验课一节</strong><br>
+                含：体态分析 + 训练建议 + 饮食指导 + 现场带练
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ 2. 对比照 ============ -->
+    <section id="panel-results" class="panel" data-color="results">
         <h2 class="section-title"><span class="bar"></span>对比照</h2>
         <div class="section-desc" style="text-align:center;">
             <p><strong>真实学员成果</strong>，未经PS，效果因人而异</p>
@@ -619,27 +628,36 @@ body {
             <div class="photo-cell has-img" data-idx="3"><img loading="lazy" src="images/outdoor-4.jpg" alt=""></div>
             <div class="photo-cell has-img" data-idx="4"><img loading="lazy" src="images/outdoor-5.jpg" alt=""></div>
             <div class="photo-cell has-img" data-idx="5"><img loading="lazy" src="images/outdoor-6.jpg" alt=""></div>
-        </div>
-    </section>
+        </div
 
-    <!-- ============ 3. 关于我 ============ -->
-    <section id="panel-about" class="panel" data-color="about">
-        <h2 class="section-title"><span class="bar"></span>关于我</h2>
+        <h2 class="section-title" style="margin-top:22px;"><span class="bar" style="background:var(--c-online);"></span>单位健身教练</h2>
+        <h2 class="section-title"><span class="bar"></span>单位健身教练</h2>
         <div class="section-desc">
-            <p><strong>我是何非凡，晋江灵源人。</strong></p>
-            <p><strong>体育教育专业</strong>出身，2016年入行做健身教练，带过上百人减脂，也开过两家店。在外面漂了8年，最后还是想回家。</p>
-            <p>现在回到晋江，以<strong>独立教练</strong>身份重新开始。</p>
-            <p>带人减脂这么多年，弯路我见太多了——节食饿到反弹的、乱吃药的、疯狂有氧把自己练废的，折腾半天又累又没瘦。</p>
-            <p><strong>所以这趟回来，就想干件实在事：把10年的本事，用在自己人身上。</strong></p>
-            <p>想好好减脂、能信任我的老乡，我们一起开始。<strong>不卖焦虑，只教方法</strong>。</p>
-            <p>🚀 如果你也想改变，来找我聊聊。</p>
+            <p><strong>多个单位指定的健身指导教练。</strong></p>
+            <p>受单位邀请，到单位健身房进行器材使用培训。</p>
         </div>
-        <div class="cta-wrap">
-            <button class="cta-btn cta-pt" id="aboutContactBtn" type="button">🎁 预约免费体验课<small>先体验，满意了再考虑报课的事</small></button>
-            <div style="margin-top:14px;padding:12px 14px;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:11px;font-size:13px;color:#15803d;line-height:1.7;">
-                🎁 <strong>第一批学员专享：免费体验课一节</strong><br>
-                含：体态分析 + 训练建议 + 饮食指导 + 现场带练
-            </div>
+        <div class="photo-grid" data-grid="corporate">
+            <div class="photo-cell has-img" data-idx="0"><img loading="lazy" src="images/corporate-1.jpg" alt=""></div>
+            <div class="photo-cell has-img" data-idx="1"><img loading="lazy" src="images/corporate-2.jpg" alt=""></div>
+            <div class="photo-cell has-img" data-idx="2"><img loading="lazy" src="images/corporate-3.jpg" alt=""></div>
+            <div class="photo-cell has-img" data-idx="3"><img loading="lazy" src="images/corporate-4.jpg" alt=""></div>
+            <div class="photo-cell has-img" data-idx="4"><img loading="lazy" src="images/corporate-5.jpg" alt=""></div>
+            <div class="photo-cell has-img" data-idx="5"><img loading="lazy" src="images/corporate-6.jpg" alt=""></div>
+        </div>
+
+        <h2 class="section-title" style="margin-top:22px;"><span class="bar" style="background:var(--c-firstaid);"></span>红十字急救师资</h2>
+        <h2 class="section-title"><span class="bar"></span>红十字急救师资</h2>
+        <div class="section-desc">
+            <p><strong>红十字认证急救师资，蓝天救援队成员。</strong></p>
+            <p>教授心肺复苏、AED使用、海姆立克等急救技能。</p>
+        </div>
+        <div class="photo-grid" data-grid="firstaid">
+            <div class="photo-cell has-img" data-idx="0"><img loading="lazy" src="images/firstaid-1.jpg" alt=""></div>
+            <div class="photo-cell has-img" data-idx="1"><img loading="lazy" src="images/firstaid-2.jpg" alt=""></div>
+            <div class="photo-cell has-img" data-idx="2"><img loading="lazy" src="images/firstaid-3.jpg" alt=""></div>
+            <div class="photo-cell has-img" data-idx="3"><img loading="lazy" src="images/firstaid-4.jpg" alt=""></div>
+            <div class="photo-cell has-img" data-idx="4"><img loading="lazy" src="images/firstaid-5.jpg" alt=""></div>
+            <div class="photo-cell has-img" data-idx="5"><img loading="lazy" src="images/firstaid-6.jpg" alt=""></div>
         </div>
     </section>
 
@@ -660,40 +678,6 @@ body {
             <div class="photo-cell has-img" data-idx="0"><img loading="lazy" src="images/cert-1.jpg" alt=""></div>
             <div class="photo-cell has-img" data-idx="1"><img loading="lazy" src="images/cert-2.jpg" alt=""></div>
             <div class="photo-cell has-img" data-idx="2"><img loading="lazy" src="images/cert-3.jpg" alt=""></div>
-        </div>
-    </section>
-
-    <!-- ============ 5. 单位健身教练 ============ -->
-    <section id="panel-corporate" class="panel" data-color="corporate">
-        <h2 class="section-title"><span class="bar"></span>单位健身教练</h2>
-        <div class="section-desc">
-            <p><strong>多个单位指定的健身指导教练。</strong></p>
-            <p>受单位邀请，到单位健身房进行器材使用培训。</p>
-        </div>
-        <div class="photo-grid" data-grid="corporate">
-            <div class="photo-cell has-img" data-idx="0"><img loading="lazy" src="images/corporate-1.jpg" alt=""></div>
-            <div class="photo-cell has-img" data-idx="1"><img loading="lazy" src="images/corporate-2.jpg" alt=""></div>
-            <div class="photo-cell has-img" data-idx="2"><img loading="lazy" src="images/corporate-3.jpg" alt=""></div>
-            <div class="photo-cell has-img" data-idx="3"><img loading="lazy" src="images/corporate-4.jpg" alt=""></div>
-            <div class="photo-cell has-img" data-idx="4"><img loading="lazy" src="images/corporate-5.jpg" alt=""></div>
-            <div class="photo-cell has-img" data-idx="5"><img loading="lazy" src="images/corporate-6.jpg" alt=""></div>
-        </div>
-    </section>
-
-    <!-- ============ 6. 红十字急救师资 ============ -->
-    <section id="panel-firstaid" class="panel" data-color="firstaid">
-        <h2 class="section-title"><span class="bar"></span>红十字急救师资</h2>
-        <div class="section-desc">
-            <p><strong>红十字认证急救师资，蓝天救援队成员。</strong></p>
-            <p>教授心肺复苏、AED使用、海姆立克等急救技能。</p>
-        </div>
-        <div class="photo-grid" data-grid="firstaid">
-            <div class="photo-cell has-img" data-idx="0"><img loading="lazy" src="images/firstaid-1.jpg" alt=""></div>
-            <div class="photo-cell has-img" data-idx="1"><img loading="lazy" src="images/firstaid-2.jpg" alt=""></div>
-            <div class="photo-cell has-img" data-idx="2"><img loading="lazy" src="images/firstaid-3.jpg" alt=""></div>
-            <div class="photo-cell has-img" data-idx="3"><img loading="lazy" src="images/firstaid-4.jpg" alt=""></div>
-            <div class="photo-cell has-img" data-idx="4"><img loading="lazy" src="images/firstaid-5.jpg" alt=""></div>
-            <div class="photo-cell has-img" data-idx="5"><img loading="lazy" src="images/firstaid-6.jpg" alt=""></div>
         </div>
     </section>
 
@@ -745,21 +729,14 @@ body {
 /* ========================================================
  * 1. 导航切换
  * ====================================================== */
-const navBtns = document.querySelectorAll('.nav-btn');
+const tabBtns = document.querySelectorAll('.tab-btn');
 const panels = document.querySelectorAll('.panel');
-const navbar = document.getElementById('navbar');
 
-navBtns.forEach(btn => {
+tabBtns.forEach(btn => {
     btn.addEventListener('click', () => {
         const tab = btn.dataset.tab;
-        navBtns.forEach(b => b.classList.toggle('active', b === btn));
+        tabBtns.forEach(b => b.classList.toggle('active', b === btn));
         panels.forEach(p => p.classList.toggle('active', p.id === 'panel-' + tab));
-        // 滚动导航条让当前按钮可见
-        const btnRect = btn.getBoundingClientRect();
-        const navRect = navbar.getBoundingClientRect();
-        if (btnRect.left < navRect.left + 20 || btnRect.right > navRect.right - 20) {
-            navbar.scrollTo({ left: navbar.scrollLeft + (btnRect.left - navRect.left) - 40, behavior: 'smooth' });
-        }
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 });
@@ -800,7 +777,7 @@ document.querySelectorAll('.copy-btn').forEach(btn => {
  * 3.5 关于我按钮：点击跳转联系我
  * ====================================================== */
 document.getElementById('aboutContactBtn').addEventListener('click', () => {
-    const contactBtn = document.querySelector('.nav-btn[data-tab="contact"]');
+    const contactBtn = document.querySelector('.tab-btn[data-tab="contact"]');
     contactBtn.click();
 });
 
