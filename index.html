@@ -281,6 +281,10 @@ body { padding-bottom: 66px; }
 .cta-online   { background: linear-gradient(135deg, #0891b2 0%, #0e7490 100%); }
 .cta-firstaid { background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%); }
 
+/* ==================== 授课子标题 ==================== */
+.sub-title { font-size: 15px; font-weight: 700; color: #1e293b; margin: 22px 0 10px; display: flex; align-items: center; gap: 8px; }
+.sub-title .bar { width: 4px; height: 15px; border-radius: 2px; background: var(--c-pt); }
+
 /* ==================== 证书3张并排 ==================== */
 .cert-row {
     display: grid;
@@ -590,16 +594,8 @@ body { padding-bottom: 66px; }
     <!-- ============ 2. 授课照片 ============ -->
     <section id="panel-service" class="panel" data-color="service">
         <h2 class="section-title"><span class="bar"></span>授课照片</h2>
-        <div class="section-desc">
-            <p><strong>🎯 私教课</strong></p>
-            <p>· 一对一定制训练计划</p>
-            <p>· 适合减脂 / 增肌 / 塑形</p>
-            <p>· 全程1对1跟进饮食和训练，效果有保障</p>
-            <p style="margin-top:10px;"><strong>👥 团课</strong></p>
-            <p>· 燃脂塑形 / 含饮食指导</p>
-            <p>· 小班教学，氛围拉满</p>
-            <p>· 每节课 60 分钟</p>
-        </div>
+
+        <h3 class="sub-title"><span class="bar" style="background:var(--c-pt);"></span>👥 团课现场</h3>
         <div class="photo-grid" data-grid="service-group">
             <div class="photo-cell has-img" data-idx="0"><img loading="lazy" src="images/group-1.jpg" alt=""></div>
             <div class="photo-cell has-img" data-idx="1"><img loading="lazy" src="images/group-2.jpg" alt=""></div>
@@ -608,7 +604,8 @@ body { padding-bottom: 66px; }
             <div class="photo-cell has-img" data-idx="4"><img loading="lazy" src="images/group-5.jpg" alt=""></div>
             <div class="photo-cell has-img" data-idx="5"><img loading="lazy" src="images/group-6.jpg" alt=""></div>
         </div>
-        <h3 style="font-size:14px;color:#64748b;margin:14px 0 8px;font-weight:600;">🤝 学员见证</h3>
+
+        <h3 class="sub-title"><span class="bar" style="background:var(--c-about);"></span>🤝 学员见证</h3>
         <div class="photo-grid" data-grid="service-testimonial">
             <div class="photo-cell has-img" data-idx="0"><img loading="lazy" src="images/testimonial-1.jpg" alt=""></div>
             <div class="photo-cell has-img" data-idx="1"><img loading="lazy" src="images/testimonial-2.jpg" alt=""></div>
@@ -617,10 +614,8 @@ body { padding-bottom: 66px; }
             <div class="photo-cell has-img" data-idx="4"><img loading="lazy" src="images/testimonial-5.jpg" alt=""></div>
             <div class="photo-cell has-img" data-idx="5"><img loading="lazy" src="images/testimonial-6.jpg" alt=""></div>
         </div>
-        <h3 style="font-size:14px;color:#64748b;margin:14px 0 8px;font-weight:600;">🏔️ 户外同行</h3>
-        <div class="section-desc" style="margin-bottom:8px;padding:10px 14px;">
-            <p style="font-size:13px;">经常组织学员爬山、跑马拉松——健身不只在健身房，更是一种生活方式。</p>
-        </div>
+
+        <h3 class="sub-title"><span class="bar" style="background:var(--c-group);"></span>🏔️ 户外同行</h3>
         <div class="photo-grid" data-grid="service-outdoor">
             <div class="photo-cell has-img" data-idx="0"><img loading="lazy" src="images/outdoor-1.jpg" alt=""></div>
             <div class="photo-cell has-img" data-idx="1"><img loading="lazy" src="images/outdoor-2.jpg" alt=""></div>
@@ -628,14 +623,9 @@ body { padding-bottom: 66px; }
             <div class="photo-cell has-img" data-idx="3"><img loading="lazy" src="images/outdoor-4.jpg" alt=""></div>
             <div class="photo-cell has-img" data-idx="4"><img loading="lazy" src="images/outdoor-5.jpg" alt=""></div>
             <div class="photo-cell has-img" data-idx="5"><img loading="lazy" src="images/outdoor-6.jpg" alt=""></div>
-        </div
-
-        <h2 class="section-title" style="margin-top:22px;"><span class="bar" style="background:var(--c-online);"></span>单位健身教练</h2>
-        <h2 class="section-title"><span class="bar"></span>单位健身教练</h2>
-        <div class="section-desc">
-            <p><strong>多个单位指定的健身指导教练。</strong></p>
-            <p>受单位邀请，到单位健身房进行器材使用培训。</p>
         </div>
+
+        <h3 class="sub-title"><span class="bar" style="background:var(--c-online);"></span>🏢 单位健身教练</h3>
         <div class="photo-grid" data-grid="corporate">
             <div class="photo-cell has-img" data-idx="0"><img loading="lazy" src="images/corporate-1.jpg" alt=""></div>
             <div class="photo-cell has-img" data-idx="1"><img loading="lazy" src="images/corporate-2.jpg" alt=""></div>
@@ -645,12 +635,7 @@ body { padding-bottom: 66px; }
             <div class="photo-cell has-img" data-idx="5"><img loading="lazy" src="images/corporate-6.jpg" alt=""></div>
         </div>
 
-        <h2 class="section-title" style="margin-top:22px;"><span class="bar" style="background:var(--c-firstaid);"></span>红十字急救师资</h2>
-        <h2 class="section-title"><span class="bar"></span>红十字急救师资</h2>
-        <div class="section-desc">
-            <p><strong>红十字认证急救师资，蓝天救援队成员。</strong></p>
-            <p>教授心肺复苏、AED使用、海姆立克等急救技能。</p>
-        </div>
+        <h3 class="sub-title"><span class="bar" style="background:var(--c-firstaid);"></span>🚑 红十字急救师资</h3>
         <div class="photo-grid" data-grid="firstaid">
             <div class="photo-cell has-img" data-idx="0"><img loading="lazy" src="images/firstaid-1.jpg" alt=""></div>
             <div class="photo-cell has-img" data-idx="1"><img loading="lazy" src="images/firstaid-2.jpg" alt=""></div>
