@@ -285,6 +285,55 @@ body { padding-bottom: 66px; }
 .sub-title { font-size: 15px; font-weight: 700; color: #1e293b; margin: 22px 0 10px; display: flex; align-items: center; gap: 8px; }
 .sub-title .bar { width: 4px; height: 15px; border-radius: 2px; background: var(--c-pt); }
 
+/* ==================== 对比照密码锁 ==================== */
+.lock-screen {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 34px 22px;
+    text-align: center;
+    box-shadow: 0 1px 4px rgba(0,0,0,.04);
+}
+.lock-screen .lk-ico { font-size: 40px; margin-bottom: 12px; }
+.lock-screen .lk-title { font-size: 17px; font-weight: 700; color: #1e293b; margin-bottom: 10px; }
+.lock-screen .lk-sub { font-size: 13px; color: #64748b; line-height: 1.7; margin-bottom: 18px; }
+.lock-screen .lk-input {
+    width: 100%;
+    max-width: 240px;
+    padding: 12px 14px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 18px;
+    text-align: center;
+    letter-spacing: 6px;
+    margin-bottom: 12px;
+    min-height: 46px;
+}
+.lock-screen .lk-input:focus { outline: none; border-color: var(--c-compare); }
+.lock-screen .lk-btn {
+    padding: 12px 40px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.lock-screen .lk-btn:active { transform: scale(.97); }
+.lock-screen.shake { animation: lkshake .4s; }
+@keyframes lkshake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-8px); }
+    40%, 80% { transform: translateX(8px); }
+}
+.consent-note {
+    font-size: 12px;
+    color: #94a3b8;
+    text-align: center;
+    margin-top: 14px;
+}
+
 /* ==================== 证书3张并排 ==================== */
 .cert-row {
     display: grid;
@@ -566,6 +615,15 @@ body { padding-bottom: 66px; }
             <p>想好好减脂、能信任我的老乡，我们一起开始。<strong>不卖焦虑，只教方法</strong>。</p>
             <p>🚀 如果你也想改变，来找我聊聊。</p>
         </div>
+
+        <div class="photo-grid" data-grid="home" style="margin-top:14px;">
+            <div class="photo-cell has-img" data-idx="0"><img loading="lazy" src="images/home-1.jpg" alt=""></div>
+            <div class="photo-cell has-img" data-idx="1"><img loading="lazy" src="images/home-2.jpg" alt=""></div>
+            <div class="photo-cell has-img" data-idx="2"><img loading="lazy" src="images/home-3.jpg" alt=""></div>
+            <div class="photo-cell has-img" data-idx="3"><img loading="lazy" src="images/home-4.jpg" alt=""></div>
+            <div class="photo-cell has-img" data-idx="4"><img loading="lazy" src="images/home-5.jpg" alt=""></div>
+            <div class="photo-cell has-img" data-idx="5"><img loading="lazy" src="images/home-6.jpg" alt=""></div>
+        </div>
         <div class="cta-wrap">
             <button class="cta-btn cta-pt" id="aboutContactBtn" type="button">🎁 预约免费体验课<small>先体验，满意了再考虑报课的事</small></button>
             <div style="margin-top:14px;padding:12px 14px;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:11px;font-size:13px;color:#15803d;line-height:1.7;">
@@ -575,19 +633,32 @@ body { padding-bottom: 66px; }
         </div>
     </section>
 
-    <!-- ============ 2. 对比照 ============ -->
+    <!-- ============ 2. 对比照（密码保护） ============ -->
     <section id="panel-results" class="panel" data-color="results">
-        <h2 class="section-title"><span class="bar"></span>对比照</h2>
-        <div class="section-desc" style="text-align:center;">
-            <p><strong>真实学员成果</strong>，未经PS，效果因人而异</p>
+        <!-- 锁屏 -->
+        <div class="lock-screen" id="lockScreen">
+            <div class="lk-ico">🔒</div>
+            <div class="lk-title">学员对比照已加密</div>
+            <div class="lk-sub">照片已获学员本人同意展示<br>为保护学员隐私，请向何教练索取查看密码</div>
+            <input class="lk-input" id="lockInput" type="password" inputmode="numeric" maxlength="6" placeholder="输入密码">
+            <br>
+            <button class="lk-btn" id="lockBtn" type="button">解 锁</button>
         </div>
-        <div class="photo-grid" data-grid="results-compare">
-            <div class="photo-cell has-img" data-idx="0"><img loading="lazy" src="images/compare-1.jpg" alt=""></div>
-            <div class="photo-cell has-img" data-idx="1"><img loading="lazy" src="images/compare-2.jpg" alt=""></div>
-            <div class="photo-cell has-img" data-idx="2"><img loading="lazy" src="images/compare-3.jpg" alt=""></div>
-            <div class="photo-cell has-img" data-idx="3"><img loading="lazy" src="images/compare-4.jpg" alt=""></div>
-            <div class="photo-cell has-img" data-idx="4"><img loading="lazy" src="images/compare-5.jpg" alt=""></div>
-            <div class="photo-cell has-img" data-idx="5"><img loading="lazy" src="images/compare-6.jpg" alt=""></div>
+        <!-- 内容（解锁后显示） -->
+        <div id="resultsContent" style="display:none;">
+            <h2 class="section-title"><span class="bar"></span>学员对比照</h2>
+            <div class="section-desc" style="text-align:center;">
+                <p><strong>真实学员成果</strong>，未经PS，效果因人而异</p>
+            </div>
+            <div class="photo-grid" data-grid="results-compare">
+                <div class="photo-cell has-img" data-idx="0"><img loading="lazy" src="images/compare-1.jpg" alt=""></div>
+                <div class="photo-cell has-img" data-idx="1"><img loading="lazy" src="images/compare-2.jpg" alt=""></div>
+                <div class="photo-cell has-img" data-idx="2"><img loading="lazy" src="images/compare-3.jpg" alt=""></div>
+                <div class="photo-cell has-img" data-idx="3"><img loading="lazy" src="images/compare-4.jpg" alt=""></div>
+                <div class="photo-cell has-img" data-idx="4"><img loading="lazy" src="images/compare-5.jpg" alt=""></div>
+                <div class="photo-cell has-img" data-idx="5"><img loading="lazy" src="images/compare-6.jpg" alt=""></div>
+            </div>
+            <p class="consent-note">照片已获学员本人同意展示，请勿转载</p>
         </div>
     </section>
 
@@ -603,16 +674,12 @@ body { padding-bottom: 66px; }
             <div class="photo-cell has-img" data-idx="3"><img loading="lazy" src="images/group-4.jpg" alt=""></div>
             <div class="photo-cell has-img" data-idx="4"><img loading="lazy" src="images/group-5.jpg" alt=""></div>
             <div class="photo-cell has-img" data-idx="5"><img loading="lazy" src="images/group-6.jpg" alt=""></div>
-        </div>
-
-        <h3 class="sub-title"><span class="bar" style="background:var(--c-about);"></span>🤝 学员见证</h3>
-        <div class="photo-grid" data-grid="service-testimonial">
-            <div class="photo-cell has-img" data-idx="0"><img loading="lazy" src="images/testimonial-1.jpg" alt=""></div>
-            <div class="photo-cell has-img" data-idx="1"><img loading="lazy" src="images/testimonial-2.jpg" alt=""></div>
-            <div class="photo-cell has-img" data-idx="2"><img loading="lazy" src="images/testimonial-3.jpg" alt=""></div>
-            <div class="photo-cell has-img" data-idx="3"><img loading="lazy" src="images/testimonial-4.jpg" alt=""></div>
-            <div class="photo-cell has-img" data-idx="4"><img loading="lazy" src="images/testimonial-5.jpg" alt=""></div>
-            <div class="photo-cell has-img" data-idx="5"><img loading="lazy" src="images/testimonial-6.jpg" alt=""></div>
+            <div class="photo-cell has-img" data-idx="6"><img loading="lazy" src="images/testimonial-1.jpg" alt=""></div>
+            <div class="photo-cell has-img" data-idx="7"><img loading="lazy" src="images/testimonial-2.jpg" alt=""></div>
+            <div class="photo-cell has-img" data-idx="8"><img loading="lazy" src="images/testimonial-3.jpg" alt=""></div>
+            <div class="photo-cell has-img" data-idx="9"><img loading="lazy" src="images/testimonial-4.jpg" alt=""></div>
+            <div class="photo-cell has-img" data-idx="10"><img loading="lazy" src="images/testimonial-5.jpg" alt=""></div>
+            <div class="photo-cell has-img" data-idx="11"><img loading="lazy" src="images/testimonial-6.jpg" alt=""></div>
         </div>
 
         <h3 class="sub-title"><span class="bar" style="background:var(--c-group);"></span>🏔️ 户外同行</h3>
@@ -757,6 +824,40 @@ document.querySelectorAll('.copy-btn').forEach(btn => {
         }
     });
 });
+
+
+/* ========================================================
+ * 3.6 对比照密码锁
+ * ====================================================== */
+(function() {
+    const KEY = 'cr_compare_unlocked';
+    const PASS = '1208';
+    const screen = document.getElementById('lockScreen');
+    const content = document.getElementById('resultsContent');
+    const input = document.getElementById('lockInput');
+    const btn = document.getElementById('lockBtn');
+
+    function unlock() {
+        screen.style.display = 'none';
+        content.style.display = 'block';
+    }
+    if (localStorage.getItem(KEY) === '1') unlock();
+
+    function tryUnlock() {
+        if (input.value === PASS) {
+            localStorage.setItem(KEY, '1');
+            unlock();
+        } else {
+            screen.classList.remove('shake');
+            void screen.offsetWidth;
+            screen.classList.add('shake');
+            input.value = '';
+            input.focus();
+        }
+    }
+    btn.addEventListener('click', tryUnlock);
+    input.addEventListener('keydown', e => { if (e.key === 'Enter') tryUnlock(); });
+})();
 
 /* ========================================================
  * 3.5 关于我按钮：点击跳转联系我
